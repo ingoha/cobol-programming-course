@@ -1009,6 +1009,8 @@ Three ‘Enterprise COBOL for z/OS” manuals are referenced throughout the chap
 
 In this lab exercise you will connect to an IBM Z system, view a simple COBOL hello world program in VSCode, submit JCL to compile the COBOL program, and view the output.  Refer to "Installation of VSCode and extensions" to configure VSCode with the Zowe Explorer and Z Open Editor extensions if you have not already done so.
 
+IMPORTANT: Always replace Z99998 with your own id.
+
 1. The lab assumes installation of VSCode with Z Open Editor and Zowe Explorer extensions as shown in Figure  2.
 
    Click the **Extensions** icon. List should include:
