@@ -810,9 +810,11 @@ COBOL source text must be written in COBOL reference format.  Reference format c
 
 
 The COBOL reference format is formatted as follows:
+
 #### Sequence Number Area (columns 1 - 6)
 
 - Blank or reserved for line sequence numbers.
+
 #### Indicator Area (column 7)
 
 - A multi-purpose area:
@@ -824,6 +826,7 @@ The COBOL reference format is formatted as follows:
     - Debugging line (D or d) 
 
     - Source listing formatting (a slash symbol)
+    
 #### Area A (columns 8 - 11)
 
 - Certain items must begin in Area A, they are:
@@ -837,6 +840,7 @@ The COBOL reference format is formatted as follows:
     - Paragraph names
 
 - Column 8 is referred to as the A Margin
+
 #### Area B (columns 12 - 72)
 
 - Certain items must begin in Area B, they are:
@@ -846,6 +850,7 @@ The COBOL reference format is formatted as follows:
     - Continuation lines
 
 - Column 12 is referred to as the B Margin
+
 #### Identification Area (columns 73 - 80)
 
 - Ignored by the compiler.
@@ -922,12 +927,15 @@ Sentences consists of Statements.
 Statements begin with COBOL reserved words and can be subdivided into “Phrases”
 
 ### What are the four Divisions of COBOL?
+
 #### IDENTIFICATION DIVISION
 
 The IDENTIFICATION DIVISION identifies the program with a name and, optionally, gives other identifying information, such as the Author name, program compiled date (last modified), etc.
+
 #### ENVIRONMENT DIVISION
 
 The ENVIRONMENT DIVISION describes the aspects of your program that depend on the computing environment, such as the computer configuration and the computer inputs and outputs.
+
 #### DATA DIVISION
 
 The DATA DIVISION is where characteristics of data are defined in one of the following sections:
