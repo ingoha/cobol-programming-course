@@ -1143,9 +1143,11 @@ COBOL source text must be written in COBOL reference format.  Reference format c
 
 
 The COBOL reference format is formatted as follows:
+
 #### Sequence Number Area (columns 1 - 6)
 
 - Blank or reserved for line sequence numbers.
+
 #### Indicator Area (column 7)
 
 - A multi-purpose area:
@@ -1157,6 +1159,7 @@ The COBOL reference format is formatted as follows:
     - Debugging line (D or d) 
 
     - Source listing formatting (a slash symbol)
+    
 #### Area A (columns 8 - 11)
 
 - Certain items must begin in Area A, they are:
@@ -1170,6 +1173,7 @@ The COBOL reference format is formatted as follows:
     - Paragraph names
 
 - Column 8 is referred to as the A Margin
+
 #### Area B (columns 12 - 72)
 
 - Certain items must begin in Area B, they are:
@@ -1179,6 +1183,7 @@ The COBOL reference format is formatted as follows:
     - Continuation lines
 
 - Column 12 is referred to as the B Margin
+
 #### Identification Area (columns 73 - 80)
 
 - Ignored by the compiler.
@@ -1255,12 +1260,15 @@ Sentences consists of Statements.
 Statements begin with COBOL reserved words and can be subdivided into “Phrases”
 
 ### What are the four Divisions of COBOL?
+
 #### IDENTIFICATION DIVISION
 
 The IDENTIFICATION DIVISION identifies the program with a name and, optionally, gives other identifying information, such as the Author name, program compiled date (last modified), etc.
+
 #### ENVIRONMENT DIVISION
 
 The ENVIRONMENT DIVISION describes the aspects of your program that depend on the computing environment, such as the computer configuration and the computer inputs and outputs.
+
 #### DATA DIVISION
 
 The DATA DIVISION is where characteristics of data are defined in one of the following sections:
@@ -2080,8 +2088,6 @@ READ-NEXT-RECORD repeatedly executes READ-RECORD and WRITE-RECORD until a last r
 *Figure  6.  Reading and writing records*
 
 **Note:** COBOL is English-like and COBOL reserved words are English-like.  The programmer is free to use English-like variable names to help remember the purpose of the variable names.  The PROCEDURE DIVISION structure is English-like.  A paragraph contains one or more sentences.  A sentence contains one or more statements.  The implicit scope terminator, a period (.), terminates a sentence or terminates several consecutive statements which would be analogous to a compounded sentence where ‘and’ joins potentially independent sentences together. 
-###
-
 
 ### READ-NEXT-RECORD paragraph execution
 
@@ -2881,6 +2887,7 @@ PRINT-REC is opened for output resulting in PRINT-REC FROM following through wit
 ## Lab
 
 This lab utilizes two COBOL programs, CBL0004 and CBL0005, located within your id.CBL data set, as well as two JCL jobs, CBL0004J and CBL0005J, located within your id.JCL data set.  The JCL jobs are used to compile and execute the COBOL programs, as discussed in previous chapters.
+
 #### Using VSCode and Zowe Explorer
 
 1. Submit job: CBL0004J
@@ -3248,6 +3255,7 @@ The sign condition determines whether the algebraic value of a numeric operand i
 ## Lab
 
 This lab requires two COBOL programs, CBL0006 and CBL0007 and two respective JCL Jobs, CBL0006J and CBL0007J, to compile and execute the COBOL programs. All of which are provided to you in your VSCode - Zowe Explorer.
+
 #### Using VSCode and Zowe Explorer:
 
 1. Take a moment and look over the source code of the two COBOL programs provided: CBL0006 and CBL0007. 
@@ -3474,6 +3482,7 @@ The WRITE-TLIMIT-TBALANCE paragraph shown in Figure  5. is positioned within the
 ## Lab
 
 This lab requires two COBOL programs, CBL0008 and CBL0009 and two respective JCL Jobs, CBL0008J and CBL0009J, to compile and execute the COBOL programs. All of which are provided to you in your VSCode - Zowe Explorer.
+
 #### Using VSCode and Zowe Explorer
 
 1. Take a moment and look over the source code of the two COBOL programs provided: CBL0008 and CBL0009.
@@ -3551,9 +3560,11 @@ Data such as numerical values and text are internally represented by zeros and o
 ### Numerical value representation
 
 COBOL has five computational (numerical) value representations.  The awareness of these representations is important due to two main reasons.  The first reason being, when a COBOL program needs to read or write data, it needs to understand how data is represented in the dataset.  The second reason is when there are specific requirements regarding the precision and range of values being processed.  The following sections describe each computational representation keyword.
+
 #### COMP-1
 
 This is also known as a single-precision floating point number representation.  Due to the floating-point nature, a COMP-1 value can be very small and close to zero, or it can be very large (about 10 to the power of 38).  However, a COMP-1 value has limited precision.  This means that even though a COMP-1 value can be up to 10 to the power of 38, it can only maintain about seven significant decimal digits.  Any value that has more than seven significant digits are rounded.  This means that a COMP-1 value cannot exactly represent a bank balance like $1,234,567.89 because this value has nine significant digits.  Instead, the amount is rounded.  The main application of COMP-1 is for scientific numerical value storage as well as computation.
+
 #### COMP-2
 
 This is also known as a double-precision floating point number representation.  COMP-2 extends the range of value that can be represented compared to COMP-1.  COMP-2 can represent values up to about 10 to the power of 307.  Like COMP-1, COMP-2 values also have a limited precision.  Due to the expanded format, COMP-2 has more significant digits, approximately 15 decimal digits.  This means that once a value reaches certain quadrillions (with no decimal places), it can no longer be exactly represented in COMP-2.
@@ -3561,6 +3572,7 @@ This is also known as a double-precision floating point number representation.  
  
 
 COMP-2 supersedes COMP-1 for more precise scientific data storage as well as computation.  Note that COMP-1 and COMP-2 have limited applications in financial data representation or computation.
+
 #### COMP-3
 
 This is also known as packed BCD (binary coded decimal) representation.  This is, by far, the most utilized numerical value representation in COBOL programs.  Packed BCD is also somewhat unique and native to mainframe computers such as the IBM z architecture.
@@ -3568,9 +3580,11 @@ This is also known as packed BCD (binary coded decimal) representation.  This is
  
 
 Unlike COMP-1 or COMP-2, packed BCD has no inherent precision limitation that is independent to the range of values.  This is because COMP-3 is a variable width format that depends on the actual value format.  COMP-3 exactly represents values with decimal places.  A COMP-3 value can have up to 31 decimal digits.
+
 #### COMP-4
 
 COMP-4 is only capable of representing integers.  Compared to COMP-1 and COMP-2, COMP-4 can store and compute with integer values exactly (unless a division is involved).  Although COMP-3 can also be used to represent integer values, COMP-4 is more compact.
+
 #### COMP-5
 
 COMP-5 is based on COMP-4, but with the flexibility of specifying the position of a decimal point.  COMP-5 has the space efficiency of COMP-4, and the exactness of COMP-3.  Unlike COMP-3, however, a COMP-5 value cannot exceed 18 decimal digits.
@@ -3580,6 +3594,7 @@ COMP-5 is based on COMP-4, but with the flexibility of specifying the position o
 ### Text representations
 
 COBOL programs often need to represent text data such as names and addresses.
+
 #### EBCDIC
 
 Extended Binary Coded Decimal Interchange Code (EBCDIC) is an eight binary digits character encoding standard, where the eight digital positions are divided into two pieces.  EBCDIC was devised in the early 1960’s for IBM computers.  EBCDIC is used to encode text data so that text can be printed or displayed correctly on devices that also understand EBCDIC.   
